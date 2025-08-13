@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LocalLens • Write a Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { indigoRoyal: { DEFAULT: '#3B5BDB', 700: '#364FC7' }, warmBg: '#FAFAF9', ink: '#0F172A', inkMuted: '#475569' },
+            boxShadow: { soft: '0 8px 24px rgba(2, 6, 23, 0.06)' },
+            fontFamily: { sans: ['-apple-system','BlinkMacSystemFont','SF Pro Text','SF Pro Display','Segoe UI','Inter','Roboto','Helvetica Neue','Arial','sans-serif'] }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body class="bg-warmBg text-ink font-sans antialiased">
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-100">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+        <a href="./index.html" class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded-xl bg-indigoRoyal-700 shadow-soft"></div>
+          <span class="text-xl font-semibold" data-i18n="brand.name">LocalLens</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <select aria-label="Language" data-lang-select class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm shadow-soft">
+            <option value="en">EN</option>
+            <option value="hi">HI</option>
+            <option value="mr">MR</option>
+          </select>
+          <a href="./index.html" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2 py-1 shadow-soft">
+            <img src="https://i.pravatar.cc/40?img=12" alt="Profile" class="h-8 w-8 rounded-full" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-6">
+      <section class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-soft">
+        <h1 class="text-lg font-semibold" data-i18n="review.title">Write a review</h1>
+        <p id="review-pro" class="mt-1 text-sm text-inkMuted">for Rahul Patil</p>
+
+        <div class="mt-4">
+          <div class="flex items-center gap-2" id="rating-stars" aria-label="Rating">
+            <button class="star">★</button>
+            <button class="star">★</button>
+            <button class="star">★</button>
+            <button class="star">★</button>
+            <button class="star">★</button>
+          </div>
+          <textarea id="review-text" rows="4" class="mt-3 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none" data-i18n-placeholder="review.feedbackPlaceholder" placeholder="Short feedback (what went well, what could be better)"></textarea>
+          <div class="mt-3">
+            <label class="text-sm" data-i18n="review.addPhotos">Add photos</label>
+            <input id="photo-upload" type="file" accept="image/*" multiple class="mt-1 block w-full text-sm" />
+            <div id="photo-preview" class="mt-2 flex flex-wrap gap-2"></div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <a href="./provider.html" class="text-sm text-inkMuted">Cancel</a>
+            <button id="submit-review" class="rounded-xl bg-indigoRoyal-700 px-4 py-2 text-white" data-i18n="review.submit">Submit review</button>
+          </div>
+          <p id="review-thanks" class="mt-3 hidden rounded-lg bg-slate-50 p-3 text-sm">Thanks for your review! 🎉</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur md:hidden">
+      <div class="mx-auto flex max-w-3xl items-center justify-around py-2 text-xs text-inkMuted">
+        <a href="./index.html" class="nav-tab" data-i18n="nav.home">Home</a>
+        <a href="#" class="nav-tab" data-i18n="nav.search">Search</a>
+        <a href="./payment.html" class="nav-tab" data-i18n="nav.wallet">Wallet</a>
+        <a href="./provider.html" class="nav-tab active" data-i18n="nav.profile">Profile</a>
+      </div>
+    </nav>
+
+    <script src="./assets/js/i18n.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
