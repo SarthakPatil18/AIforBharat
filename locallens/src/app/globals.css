@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a; /* slate-900 */
+  --muted: #f8fafc; /* slate-50 */
+  --card: #ffffff;
+  --border: #e2e8f0; /* slate-200 */
+  --accent: #3b5bdb; /* royal blue */
+  --accent-foreground: #ffffff;
+  --ring: #3b5bdb;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-md: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0e14;
+    --foreground: #e5e7eb; /* slate-200 */
+    --muted: #0f1623;
+    --card: #0f1623;
+    --border: #1f2937;
+    --accent: #4c6ef5; /* slightly brighter */
+    --accent-foreground: #ffffff;
+    --ring: #4c6ef5;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Inter, "SF Pro Text", "SF Pro Display", Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+}
+
+.input {
+  @apply w-full rounded-xl border border-[--border] bg-card px-4 py-3 text-[15px] shadow-sm shadow-black/5 placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-[--ring]/20 focus:border-[--ring] transition;
+}
+
+.button {
+  @apply inline-flex items-center justify-center rounded-xl bg-[--accent] px-4 py-3 text-sm font-medium text-[--accent-foreground] shadow-sm hover:brightness-95 active:brightness-90 transition focus:outline-none focus:ring-4 focus:ring-[--ring]/30;
+}
+
+.card {
+  @apply rounded-2xl bg-card border border-[--border] shadow-sm shadow-black/5;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full border border-[--border] bg-muted px-2.5 py-1 text-xs text-slate-600;
+}
