@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LocalLens • Provider Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              indigoRoyal: { DEFAULT: '#3B5BDB', 700: '#364FC7' },
+              warmBg: '#FAFAF9',
+              ink: '#0F172A',
+              inkMuted: '#475569'
+            },
+            boxShadow: { soft: '0 8px 24px rgba(2, 6, 23, 0.06)' },
+            fontFamily: { sans: ['-apple-system','BlinkMacSystemFont','SF Pro Text','SF Pro Display','Segoe UI','Inter','Roboto','Helvetica Neue','Arial','sans-serif'] }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body class="bg-warmBg text-ink font-sans antialiased">
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-100">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+        <a href="./index.html" class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded-xl bg-indigoRoyal-700 shadow-soft"></div>
+          <span class="text-xl font-semibold" data-i18n="brand.name">LocalLens</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <select aria-label="Language" data-lang-select class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm shadow-soft">
+            <option value="en">EN</option>
+            <option value="hi">HI</option>
+            <option value="mr">MR</option>
+          </select>
+          <a href="./payment.html" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-sm shadow-soft border border-slate-100">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigoRoyal-700" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22a7 7 0 1 1 7-7 7.008 7.008 0 0 1-7 7Zm.75-7.75h2a.75.75 0 0 0 0-1.5h-1.25v-.905a3.251 3.251 0 0 0-2.75-3.19V7.75a.75.75 0 0 0-1.5 0v.905a3.251 3.251 0 0 0-2.75 3.19.75.75 0 0 0 1.5 0 1.75 1.75 0 1 1 3.5 0v.155h-2a.75.75 0 0 0 0 1.5h2v1h-2a.75.75 0 0 0 0 1.5h2v.75a.75.75 0 0 0 1.5 0v-.75h1.25a.75.75 0 0 0 0-1.5H12.75Z"/></svg>
+            <span>₹ <span data-wallet-balance>1,240</span></span>
+          </a>
+          <a href="./index.html" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2 py-1 shadow-soft">
+            <img src="https://i.pravatar.cc/40?img=12" alt="Profile" class="h-8 w-8 rounded-full" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-6">
+      <section class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-soft">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1200&auto=format&fit=crop" alt="Provider" class="h-24 w-24 rounded-2xl object-cover" />
+          <div class="flex-1">
+            <div class="flex items-center gap-2">
+              <h1 class="text-xl font-semibold">Rahul Patil</h1>
+              <span class="badge-verified" data-i18n="provider.verified">Verified</span>
+            </div>
+            <p class="text-inkMuted text-sm">Plumber • 5 yrs experience • Kothrud</p>
+            <div class="mt-2 flex items-center gap-3 text-sm">
+              <span class="inline-flex items-center gap-1">⭐ 4.9 (210)</span>
+              <span>·</span>
+              <span>₹ 299 <span class="text-inkMuted">base</span></span>
+              <span>·</span>
+              <span class="text-inkMuted" data-i18n="provider.response">Responds within 10 min</span>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <a href="./payment.html?pro=Rahul%20Patil&service=Plumbing%20Inspection&amount=499" class="rounded-xl bg-indigoRoyal-700 px-4 py-2 text-white" data-i18n="provider.bookNow">Book now</a>
+            <a href="tel:+919999999999" class="rounded-xl border border-slate-200 px-4 py-2" data-i18n="provider.contact">Call</a>
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-6 md:grid-cols-3">
+          <div class="md:col-span-2 space-y-6">
+            <div>
+              <h2 class="text-lg font-semibold" data-i18n="provider.about">About</h2>
+              <p class="mt-2 text-sm text-inkMuted">Expert plumber specializing in leak fixes, tap replacements, and bathroom installations. Serving Kothrud, Karve Nagar, and Erandwane.</p>
+            </div>
+            <div>
+              <h2 class="text-lg font-semibold" data-i18n="provider.services">Services</h2>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="chip">Leak Fix</span>
+                <span class="chip">Tap Replacement</span>
+                <span class="chip">Water Filter Install</span>
+                <span class="chip">Bathroom Fittings</span>
+              </div>
+            </div>
+            <div>
+              <h2 class="text-lg font-semibold" data-i18n="provider.reviews">Reviews</h2>
+              <div class="mt-3 space-y-3">
+                <div class="rounded-xl border border-slate-200 p-3">
+                  <div class="flex items-center gap-2 text-sm"><strong>Ananya</strong> <span class="text-yellow-500">★★★★★</span></div>
+                  <p class="mt-1 text-sm text-inkMuted">Quick and clean work. Fixed my kitchen leak in 20 minutes.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 p-3">
+                  <div class="flex items-center gap-2 text-sm"><strong>Vikram</strong> <span class="text-yellow-500">★★★★☆</span></div>
+                  <p class="mt-1 text-sm text-inkMuted">On time and professional. Slightly pricey but worth it.</p>
+                </div>
+              </div>
+              <a href="./review.html?pro=Rahul%20Patil" class="mt-3 inline-flex rounded-lg border border-slate-200 px-3 py-2 text-sm" data-i18n="provider.writeReview">Write a review</a>
+            </div>
+          </div>
+          <aside class="space-y-4">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <h3 class="font-medium" data-i18n="provider.serviceHistory">Service history</h3>
+              <ul class="mt-2 space-y-2 text-sm">
+                <li class="flex items-center justify-between">
+                  <span>Kitchen leak fix</span>
+                  <span class="status-badge success">Completed</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Tap replacement</span>
+                  <span class="status-badge info">In warranty</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Bathroom fitting</span>
+                  <span class="status-badge muted">Dec 2024</span>
+                </li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-4">
+              <h3 class="font-medium" data-i18n="provider.warranty">Warranty tracker</h3>
+              <div class="mt-2 rounded-lg border border-dashed border-slate-300 p-3 text-sm text-inkMuted">
+                Tap replacement on 10 Jan 2025 — warranty valid until 10 Apr 2025.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <nav class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur md:hidden">
+      <div class="mx-auto flex max-w-3xl items-center justify-around py-2 text-xs text-inkMuted">
+        <a href="./index.html" class="nav-tab" data-i18n="nav.home">Home</a>
+        <a href="#" class="nav-tab" data-i18n="nav.search">Search</a>
+        <a href="./payment.html" class="nav-tab" data-i18n="nav.wallet">Wallet</a>
+        <a href="./provider.html" class="nav-tab active" data-i18n="nav.profile">Profile</a>
+      </div>
+    </nav>
+
+    <script src="./assets/js/i18n.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
